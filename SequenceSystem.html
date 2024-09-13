@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <script type="text/javascript" src="https://me.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=VX7AudXxStNzbQwR1jeHwnFVw9ik38PAK4ZP2SuA34dEhg1wIzVMfsKWknTF6Zjco9qwWH0u7UsRDZQTRvfi9q2ZRw17Uohhj4VN298Frm4JcNLds3H-1_g8NQvh0tfD6GF5yb5err-9WwcmDk7mlg3WVRPbCaD0wmf3yYfmR7Hegt4latLBpXiiCiJtVyk3HeCAeuXWIJQwCs_JHyW2eJbFg5r25olsRRrHLcmnkyC8_j2XVhJGCi73yHftxlg4_qwpmL8lUOKmXxloMSvkrpGcT82XSatpXNckpR1NHPGM8qf7TVTJxFw01vJd2xZFwbK6e6Thk6QOWZ0e4p4EPk9uZ_hBliQna5N2O0F-jT3a9Wu482bBA0jxISgA9vvGmceTqmSscA4kKiXOlmEOpEe8uDp0Ptp4RsFIMJ9oVfOB2wlpsVDb59XGlNWb_sW9RQKDGns6fJLipNDqNe3Xw0Huj_LUdLOSXxANNDSlbu0QKA5c6Y1pN5ji6swaBIPH6E6FHEKstNPep621leykH5S1Ir7zHqlMOCqKEK3ECoP-vw5ArF0hjGtHW0nONB2FoBydZ_uBAK3njq4Gna3aE4WXkAGc_fkb47ZDUohfypzYJRAcD50AtsVAOO3V893JdNlslc8Pd0DXYheowjbmNwfuP-WxtPv3AgR7NOkYuzhD2i5rAKUyI4qgRB3ok_QR8n18CyvVH5-dNGNcSxIjRF3ENylK3ucZFXhjP81ajBDfj_qVXVZ3pHqgJbcgWupggaGltQEwOPdRe0zhaRtX4yLdQ4ycGTusTM0-7f-l2urXPk78T3U2NIaXNI9zU9qhERJlPUB0kmaHVnLmfRXGF9VGa9WR7owYbyKoBFQwYeN8n9zIBl65dovK5JcaXKIoHTJGhrQ8gr1pCoYGA287dWSYZLhXXNkebTe_GooQvaLPU4DjET-Cj8TrQamm1yAZU9_t1Ju15ijGndfLkorvezuKbK-6uPJHa_sQp5rCfrpq2JuaTQnGHwhE09DoYWJX3dz--PfZiJOby48MR5WmLApgRXyAqUp-gBHipPTTZ54-X5i5Sd2Lucm8CAoA2lhthClvbMfnJj-exawtcygGDPg3nnnptIvbxA4Q04A3EUnk8KXH0uIADyJC-JRJzmYYuWp9Qd0oDCLXCIqR5f5brgZqoMvTBsWiJSZQe2Ss91_tm2HSRZ9DJPGkJmi4zhc-sYi9A3H_Tm5nbEdvsNYEpRcvxRR0Ve9NNzy38FBAPGj1YYcKNBOOeg8gYNjvb7CLqzKfDtLdpkbvDvLAJ4Qo7eltncpqW4rWnYHbSrtlpu88EKC8b5c_M1LwZwtaWuMYKJTAWf-UHQaDP__tMmKIW0t2LPFMDqqJIlXVObxDlyzRo12TDSLNg0SO9t3CRSscPgnU4fRj-W3991SSHiMRhQGqSFFFBdWdRhhWNpM2uU8SOk33SxOxemJExldb-C9tAy7tO41GrG8OWP3emeO6KlDAmiUafFsSFdexIkV2K8n0NADF-MOcGCK9PpG3OJkdpOtbxfDZzKw6bGJnWzVKzxifGNbXI4Q2sgq5uwwCwHz4t2wSOItC8ML9kUPDQORd0eruCSiLg7xglk-rV_jW8VUtUEtA-SAQ4jpvQBEO1hRP6IeoaEAfexo2Fyp4MLEbkgO_exIPjXTUawuKsoyZ4zG20bEJF42nf3LJx_ahHLNaC8OvO7sfwb7YgSxGAefV" nonce="daa6efb269437e01d7ca4227e5a83054" charset="UTF-8"></script><script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+<!-- The Kaspersky script should be removed if not necessary -->
+<script type="text/javascript" src="https://me.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=Ok4FJAep0gyCvrLIJOlDPz0jlt5Sb51iw7FYEFT8UsBZQS6p8g1TaBKPASVXYqkaYr2EvWEAH5-QI3PWwBVFZBVnIqyQa6TvjoLFZCsPT51_6F5iVXSpZUGnWzH4eZlJRyd-wllhOCxgNgvZrUAnPrtcyJ-nU3KFXquJcRNpitwIk6Ng_EhVljnt0fmUBUZiz7Jz43nkE5KlPAsjlKXdCwfK4Rp3YEg43oaQpa9z22W6FGkgQDk27R1cObBCJiHaDmX2dMTmBxHnRXIIz9BiyaVIeYObgfPf2cX37RolFA0tm5sts8NgVVM7X4Jg3gWWByJ3kuHKLrVvhUR5TsGZy5g_V-d4TtycSX9JpsFeGJ-zOZikmw638vpQRhMfXx8LiBcvZHJRL2spZBCAqubl8LwFWJhYiPLnpCwaSNZAiGRFUdy1-Ch9oolJRgNwDfDJFd5Lyn18859jlhbedNFgdZElEkRB_9174bhsyyClsrgVUjZFhF5EBaZiZDAD8o6nOYY6oXU_3KLLjVe4f9iDX2c1QqbKoKSsAf51s53dfudjxRE2HsguNnUCwogkN-wAKSUocX4cVAv5hzcN2RR2AJ1Q_v37NsfrX27DcP5etmeSa-a1hgU9K6lkCT5npnZ7k7zvQWmm0O7UsjQFlLmae1g0XVQbUMUfWvShh4TpzIw8PAxl6QNigGMc3L09FHtRJFb2_pUJj3q0Omeyp16KRd6KCi1xCviNVDVkHR7G1Z7kJFcnhXzrGceD-JcMgWo7XvZMhJ77DrqB8psTlrAHWyn2vk_NRX_W3VSf8rXxOphVSmccH7xqCgpBAUATkgZFgO0O1m_kXVe4cV1v-N08A9sLJ5zxMf7H7XC0f70sztQ4t8sNVMOVTr-Ui5HI9G2YWcksrUDlUQKXT25oNQG6JFLSCN2409dwJLXk-RBepD2rv8FeQfeadZ0p5rBYJBlVMvIbjaERgvHNnmqUaBgL5o2tcrk0IsfB4ULHpd2wmlWdNvPIe2SrBcJLylQ3wOfa1HquQ-DvlfM2jEt6u9D_dIZQA-51OetZX6QT9IwyY8EIYflR7X8xMvgVjZeWcSpNnK7-OuYhWO1d-io7SyqLj1fb9dovld-lobAXBKUsvZUIUoOPCoOUmwi6yKKQjWjAZz7nqbNBUoi6CgLRoUyA93S7fRARP6cvWLtgKxIZMqRyO4IH4GZpnA_4mQk6Qfq22UHd0udBhC7JQQgyF9hd9B3abL3s0RKw6MDkg4bX6ZyhK-U8Z85-EGeDRhcp5sKHT6DQQ1AifacctFlKBfjqnnPzIuetoAgipiT_v8I-oW6t9rNh0GYiV5YNy4Vpb6UUMw97Q7KDHVgOcYFiNoPzhr_GvPXKbiy6AYsCPl2FM39jWDHcT8g_m3f3pv05fGuT86QLLNPPajKILGmY3feJ2gEtXCr6ImQwKjua6FqYyJfF4xitN0qO78unFZ1dtxlmbiVnT4fHpPLuqb2gW7xwAwP9mCFMsNV5Q0h5PmG19yJStwFOYwQva_OzUVANxBE4xogv2SD1V7P1kDliYJZQQquBlErAM0Sh3J24KXTBQS87BrdI-NusuGwg27gEpjuko48TSgUBmSRKUiGVnYiIu6cbioqLkQgwqmGB1OZ9LsvOIKeeQOtc1O4Olshs4tot" nonce="00dea14a754d5ecee8eaaf07cc39cf6a" charset="UTF-8"></script><script type="text/javascript" src="https://me.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=09EGwKtjltKslhWPld2y7pjUvujJUsrbt1vdL8nfJhBBVZdswgOyYcZPbM20TUsgT1tAsBCI7ZTl27z5Rvk3k2LvdR6zgELl_HH09yPKRHTv5sK9cx7KZ8YnCSCsg-MljZxrlsbaRlOjn0PreHjA45dJbRphx8610i7ZO206jiomIJKJmmISBZIbGA8altORqTM6BUdwkdqC9eDUhzo5tyqvqsd7ZZW5qgRtGwz3SM-zuyR0us0sYP1lO9ROhdoGDjENNieMBdtbnh1UX0QRQRjHDv8acT6wuQeQ2w-CL5TeZUZ1A-jJcmdw1ckZCYlRxJttarKGyvG__uo0ebmWQwrmvrPM0Ipek5FdOXyON2S2RzZ22cHUVcw4lJQRXFt5YG-lCE_AkLbxrllVDdNO4hD5CE83gudEZtTd-lELCLOqN8PbEiNsIJfHDwU0unvfIBtSiNE0bajMc43aYZwKpG58IlbuCs2L7WgxX39naDwZyU3jByzvUZlLcfsg7kyQUWAopjtgz3c0ozLrcazzAkMtSjfZIFBdPk0213tf3ICE1vI150NOSckUuiHBdBvTNhda6BX5l6gchMcZVuu9E22T28iKTlpaJka-bHRAUuoCBquxVV-rp2vR-htpveuil5q483j4jhuanhDxxuvGpVCMcX4Bx3u575jcMY51N2R3tn4TL7DzggYwvzs_GOHqrzgZt4bedrri1wafeM527FDbmLu4vz1oJG33IiKiqo_oww8KMr2IHgrrenZSILw-CY0An-6rCbOkFzx2Q80xMPOyzybDCdUZFx6wdNFLxkdPb0WoQV0U0CBe1fyIx6sw1Nm0ZljnWdZKz3_PvEPbF-UqP4pL4vBaznsLTNpUg30MLYBUdlOIYIS6lC--mYA-rrcuOpxBR9kGS9SRPuv6x3C-T0D0W-zlSalZ8kDYlwHp4IVbbt2TGhozLvBho1vnCbN9YYl-6Lq2hcd-QaRqEjUJDTAp-RKbgHXGguaB2WVpZSxj5f8asNMMwPBP89-uJS5aBXtRJpxkEC1YVKiePSw5o3mcq1sr0w_uQI8YnYt9eldrIDnVIkE6NTpWd5n3TEmGEZCBZEZlK0rzo3kyuraoJKAq3bx8nWuEztLtUgeQqUS8hbpJyqTh_gp-N3IZM8xHKmNTlB4biU8WpGAJgWbQsaHwSAqtB_pJ8hgmsnBCPK6jQ28DrfbykUZbVfe4QnT6ov6pJZMbi17ctHpTKvVqV06YRfSOS2pZjE2IhZXpu6vRKKjjy9X-XjTAH3As2b90MoLt1CiuQ32Nbpu2Qu5iT53XEYJRADifO-3DanB-DRHE8CaYnbigFgpD8SbytJVoJEyyQvTC8ipMdGAKR65_FFR2DUMJaHcXRiryGEl2zcLGAe3i8JuB0L9PPGMPNqScnO8SJscuwu7MB_mc14NwMrn8KlE1W6F24PcVfNb3bns49On8NADkYyOyHy9ldHfTMXSnX9d9F0EDnHP5hwiCWR1ZXslgKG6HLB5y9E2Q_qk3CNESILt4l255x4YfM8eVF5zh81pLqe3CRw46kUxU0aTjUvAY3gF6ssvs9oTfo7bbLAEbKW65C1bCPHHCN-sVhbXtZXmDoGfv8mUGfQXS3kDouJxb3-ApwExAbPEfUpmnTus0YqGDGfFWDRmks_5MGRwOQJOnPHoVjBdbu5VJhXvgWN0sQBY8l3aE9UKcz-5tdA5SCNKfgBCR-juT" nonce="baa8a7dd26b1a0725a924a070c6d47e3" charset="UTF-8"></script><style>
+
+body {
+  background-color: blue;  
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  height: 100vh; /* Full height of the viewport */
+  display: flex;
+  flex-direction: column;
+}
+
+.container-full {
+  flex-grow: 1; /* Allow the container to take up all remaining space */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Align the rectangles to the bottom of the page */
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+
+/* Chat Modal styling */
+.chat-modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 100; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.4); /* Black with opacity */
+  padding-top: 60px;
+}
+
+.chat-modal-content {
+  background-color: #fefefe;
+  margin: 5% auto; /* 15% from the top and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  position: relative;
+  padding: 20px;
+}
+
+.close {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Message cloud styling */
+.message-container {
+  position: fixed;
+  top: 100px; /* Adjust as needed */
+  left: 20px; /* Same as chat button */
+  width: 200px; /* Adjust width as needed */
+  z-index: 100; /* Ensure it appears above other content */
+}
+
+.message-cloud {
+  background-color: #FF69B4; /* Pink color for the cloud */
+  color: white; /* White text color */
+  border-radius: 15px; /* Rounded corners */
+  padding: 10px;
+  margin-top: 10px; /* Space between messages */
+  position: relative;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Add a little tail to the cloud */
+.message-cloud::after {
+  content: '';
+  position: absolute;
+  bottom: -10px; /* Adjust based on the size */
+  left: 20px; /* Adjust to center the tail */
+  border-width: 10px;
+  border-style: solid;
+  border-color: #FF69B4 transparent transparent transparent; /* Pink tail */
+}
+
+ .empty-box {
+  width: 50px;  /* Set the width of the box */
+  height: 50px; /* Set the height of the box */
+  border: 1px solid black; /* Add a border to the box */
+  position: absolute; /* Position it absolutely within its parent */
+  top: 0; /* Align it to the top */
+  right: 0; /* Align it to the right */
+  display: inline-flex; /* Center text inside the box */
+  justify-content: center; /* Center text horizontally */
+  align-items: center; /* Center text vertically */
+  font-size: 20px; /* Set font size */
+}
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+
+.rectangle-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rectangle {
+  background-color: white;
+  width: 22%;
+  height: 80vh; /* Adjust the height to take up more vertical space */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align items to the top */
+  align-items: center;
+  position: relative; /* Positioning context for the plus button */
+  padding: 10px;
+  border: 1px solid #888;
+}
+.delete-button {
+  background-color: red; /* Red button */
+  color: white; /* White text */
+  border: none; /* No border */
+ 
+  top: 0; /* Align it to the top */
+  left: 0; /* Align it to the left*/
+  float: left; /* Align to the right inside the box */
+   width: auto;
+  padding: 5px 5px;
+  border-radius: 5%; /* Circular button */
+  font-size: 12px; /* Smaller font size */
+  margin-left: 5px; /* Spacing from text */
+}
+
+.delete-button:hover {
+  background-color: darkred; /* Darker red on hover */
+}
+
+.delete-chat-button {
+  background-color: blue;
+  color: white; /* White text */
+  border: none; /* No border */
+  position: absolute; /* Position it absolutely within the parent */
+  top: 5px; /* Decrease this value to move the button higher */
+  left: 0; /* Align it to the left */
+  width: auto;
+  padding: 5px 5px;
+  border-radius: 5%; /* Circular button */
+  font-size: 12px; /* Smaller font size */
+  margin-left: 5px; /* Spacing from the left edge */
+}
+
+
+.delete-chat-button:hover {
+  background-color: darkred; /* Darker red on hover */
+}
+
+
+.plus-button {
+  background-color: #04AA6D;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 24px;
+  position: absolute; /* Absolute positioning inside the rectangle */
+  bottom: 10px; /* Position 10px from the bottom */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center horizontally */
+}
+
+.plus-button:hover {
+  opacity: 0.8;
+}
+
+.name-box {
+  background-color: #fff;
+  border: 1px solid #888;
+  padding: 10px;
+  margin: 5px 0;
+  width: 100%;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: move;
+}
+.title-container {
+  text-align: center;
+  padding: 20px;
+  background-color:blue; /* Make the background of the title area black */
+}
+.title {
+  text-align: center;
+  font-size: 2em;
+  margin: 20px 0;
+  color: white; /* Set the title text color to white */
+}
+.reg-title {
+  font-size: 1.5em;
+  margin-bottom: 10px; /* Adds some space below the title */
+  text-align: center;
+}
+
+.chat-button {
+  position: fixed; /* Fixed positioning to stick to the top left */
+  top: 20px; /* Distance from the top */
+  left: 20px; /* Distance from the left */
+  background-color: #FF69B4; /* Pink color for a lovely appearance */
+  color: white; /* White text color */
+  border: none; /* No border */
+  border-radius: 50%; /* Rounded shape for a cute button */
+  width: 60px; /* Button width */
+  height: 60px; /* Button height */
+  font-size: 16px; /* Font size */
+  font-weight: bold; /* Bold text */
+  cursor: pointer; /* Pointer cursor on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: transform 0.3s, background-color 0.3s; /* Smooth transitions */
+  display: flex; /* Added line for flexbox display */
+  align-items: center; /* Center text vertically */
+  justify-content: center; /* Center text horizontally */
+}
+
+
+.chat-button:hover {
+  background-color: #FF1493; /* Darker pink on hover */
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+/* Highlight drop target on drag over */
+.rectangle.dragover {
+  border: 2px dashed #04AA6D;
+}
+</style>
+</head>
+<body>
+<!-- Chat Button -->
+<button class="chat-button" onclick="showChatModal()">Chat</button>
+
+<!-- Chat Modal -->
+<div id="chatModal" class="chat-modal">
+  <div class="chat-modal-content animate">
+   
+    <div class="chat-container">
+      <label for="message"><b>Message</b></label>
+      <input type="text" placeholder="Enter your message" id="message" required>
+      <button type="button" onclick="sendMessage()">Send</button>
+    </div>
+ <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="closeChatModal()" class="cancelbtn">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- Container for displaying messages -->
+<div id="messageContainer" class="message-container"></div>
+
+<div class="title-container">
+  <h1 class="title">Sequence System</h1>
+</div>
+<div class="container-full">
+  <div class="rectangle-container">
+   <div class="rectangle" id="rectangle1" ondragover="allowDrop(event)" ondrop="drop(event)">
+  <div class="reg-title">Finished</div>
+  <div class="empty-box" id="counterBox1">0</div>
+</div>
+    <div class="rectangle" id="rectangle2" ondragover="allowDrop(event)" ondrop="drop(event)">
+   <div class="reg-title">X-Ray</div> 
+  <div class="empty-box" id="counterBox2">0</div>
+    </div>
+    <div class="rectangle" id="rectangle3" ondragover="allowDrop(event)" ondrop="drop(event)">
+   <div class="reg-title">Sequence</div> 
+  <div class="empty-box" id="counterBox3">0</div>
+      <button class="plus-button" onclick="showModal(3)">+</button>
+    </div>
+    <div class="rectangle" id="rectangle4" ondragover="allowDrop(event)" ondrop="drop(event)">
+   <div class="reg-title">All Patients</div>
+  <div class="empty-box" id="counterBox4">0</div>
+      <button class="plus-button" onclick="showModal(4)">+</button>
+    </div>
+  </div>
+</div>
+
+<div id="id01" class="modal">
+  <form class="modal-content animate" onsubmit="addName(event)">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Name</b></label>
+      <input type="text" placeholder="Enter name" name="uname" id="uname" required>
+      <button type="submit">Add</button>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+  </form>
+</div>
+
+
+ <!-- Modal for choosing between X-Ray and MRI -->
+<div id="choiceModal" class="modal">
+  <form class="modal-content animate" onsubmit="applyChoice(event)">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('choiceModal').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+
+    <div class="container">
+      <label for="choice"><b>Select Type</b></label>
+      <select id="choice" name="choice" required>
+        <option value="xray">X-Ray</option>
+        <option value="mri">MRI</option>
+      </select>
+      <button type="submit">Apply</button>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('choiceModal').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+  </form>
+</div>
+
+
+<script>
+
+let draggedElement = null; // Keep track of the dragged element
+
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDSF3Gg2kopE4mECHb886YBfDfGTTMqz6E",
+  authDomain: "sequence-system.firebaseapp.com",
+  databaseURL: "https://sequence-system-default-rtdb.asia-southeast1.firebasedatabase.app/",
+  projectId: "sequence-system",
+  storageBucket: "sequence-system.appspot.com",
+  messagingSenderId: "949366896572",
+  appId: "1:949366896572:web:d7dfe7ce6289bc2153ddb9",
+  measurementId: "G-X0T0GSJBXV"
+};
+
+
+  // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const database = firebase.database();
+
+   
+
+function openChat() {
+  alert("Chat button clicked!"); // Replace this with your chat window logic
+}
+// Variable to keep track of the selected rectangle
+let selectedRectangle = null;
+
+// Function to show the modal and store the clicked rectangle
+function showModal(rectangleNumber) {
+  selectedRectangle = rectangleNumber;
+  document.getElementById('id01').style.display = 'block';
+}
+
+// Function to add the entered name to the appropriate rectangle
+function addName(event) {
+  event.preventDefault();
+
+  const name = document.getElementById('uname').value;
+
+  if (name && selectedRectangle !== null) {
+    const rectangle = document.getElementById(`rectangle${selectedRectangle}`);
+    
+    // Create the name box
+    const nameBox = document.createElement('div');
+    nameBox.className = 'name-box';
+    nameBox.draggable = true;
+    nameBox.ondragstart = drag;
+    nameBox.textContent = name;
+
+    // Create the delete button
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = 'X';
+    deleteButton.className = 'delete-button';
+    deleteButton.onclick = function() {
+      deleteBox(nameBox);
+    };
+
+    // Append the delete button to the name box
+    nameBox.appendChild(deleteButton);
+
+    let backgroundColor = '';
+    let textColor = '';
+
+    // Set background color based on the selected rectangle
+    if (selectedRectangle === 4) {
+      backgroundColor = 'blue';
+      textColor = 'white';
+    } else if (selectedRectangle === 3) {
+      backgroundColor = 'yellow';
+      textColor = 'black';
+    }
+
+    nameBox.style.backgroundColor = backgroundColor;
+    nameBox.style.color = textColor;
+
+    // Append the name box to the selected rectangle
+    rectangle.appendChild(nameBox);
+    
+    // Hide the modal
+    document.getElementById('id01').style.display = 'none';
+    
+    // Clear the input field
+    document.getElementById('uname').value = '';
+
+    // Save the name, rectangle, and colors to Firebase
+    const newNameRef = database.ref('rectangles').push();
+    newNameRef.set({
+      name: name,
+      rectangle: selectedRectangle,
+      backgroundColor: backgroundColor,
+      textColor: textColor,
+ position: selectedRectangle === 3 ? rectangle.querySelectorAll('.name-box').length : null // Only track position for "Sequence"
+    });
+
+    // Update the box count
+    updateBoxCount();
+  }
+}
+
+
+
+function deleteBox(boxElement) {
+  const parentRectangle = boxElement.parentElement;
+  parentRectangle.removeChild(boxElement);
+  updateBoxCount(); // Update the count after deletion
+}
+// Function to handle drag start event
+function drag(event) {
+  event.dataTransfer.setData('text', event.target.id);
+  event.target.classList.add('dragging');
+}
+
+// Function to handle drag over event
+function allowDrop(event) {
+  event.preventDefault();
+  event.currentTarget.classList.add('dragover');
+}
+
+// Function to handle drop event
+
+
+
+
+function drop(event) {
+  event.preventDefault();
+  draggedElement = document.querySelector('.dragging');
+  const targetRectangle = event.currentTarget;
+
+  if (draggedElement && targetRectangle.classList.contains('rectangle')) {
+    if (targetRectangle.id === 'rectangle2') {
+      // Show choice modal when dropping into "X-Ray" rectangle
+      document.getElementById('choiceModal').style.display = 'block';
+    } else {
+      // Check if the target is the "Finished" rectangle
+      if (targetRectangle.id === 'rectangle1') {
+        draggedElement.style.backgroundColor = 'green'; // Set color to green
+        draggedElement.style.color = 'white'; // Optional: Set text color to white
+      } else if (targetRectangle.id === 'rectangle3') {
+        // Preserve the original color for the Sequence rectangle
+        // (No color change here)
+      } else {
+        // Reset the color for other rectangles
+        draggedElement.style.backgroundColor = ''; // Reset to default
+        draggedElement.style.color = ''; // Reset to default
+      }
+
+      // Move the dragged element to the target rectangle
+      targetRectangle.appendChild(draggedElement);
+      draggedElement.classList.remove('dragging');
+
+      // If the target is "Sequence" (rectangle3), update the positions of all boxes in it
+      if (targetRectangle.id === 'rectangle3') {
+        const sequenceBoxes = Array.from(targetRectangle.querySelectorAll('.name-box'));
+
+        sequenceBoxes.forEach((box, index) => {
+          const name = box.textContent.slice(0, -1); // Remove the delete button "X" from name
+          const rectanglesRef = database.ref('rectangles');
+
+          // Save the updated position of each box in Firebase
+          rectanglesRef.once('value', function(snapshot) {
+            snapshot.forEach(function(childSnapshot) {
+              const data = childSnapshot.val();
+              if (data.name === name) {
+                rectanglesRef.child(childSnapshot.key).update({
+                  rectangle: 3,  // Sequence rectangle
+                  position: index  // Update position based on current order in the sequence
+                });
+              }
+            });
+          });
+        });
+      } else {
+        // Get the name of the patient (excluding the delete button "X")
+        const name = draggedElement.textContent.slice(0, -1);
+
+        // Save the new rectangle and color to Firebase
+        const rectanglesRef = database.ref('rectangles');
+        rectanglesRef.once('value', function(snapshot) {
+          snapshot.forEach(function(childSnapshot) {
+            const data = childSnapshot.val();
+            if (data.name === name) {
+              // Update rectangle in Firebase based on the new target
+              rectanglesRef.child(childSnapshot.key).update({
+                rectangle: parseInt(targetRectangle.id.replace('rectangle', ''), 10),
+                backgroundColor: draggedElement.style.backgroundColor, // Save the new color
+                textColor: draggedElement.style.color // Save the new text color
+              });
+            }
+          });
+        });
+      }
+    }
+  }
+
+  event.currentTarget.classList.remove('dragover');
+  updateBoxCount(); // Update the box count
+}
+
+
+function applyChoice(event) {
+  event.preventDefault();
+  
+  const choice = document.getElementById('choice').value;
+
+  if (draggedElement) { // Ensure draggedElement is available
+    if (choice === 'xray') {
+      draggedElement.style.backgroundColor = "pink"; // Pink for X-Ray
+      draggedElement.style.color = 'white';
+    } else if (choice === 'mri') {
+      draggedElement.style.backgroundColor = 'purple'; // Purple for MRI
+      draggedElement.style.color = 'black';
+    }
+
+    const targetRectangle = document.getElementById('rectangle2'); // X-Ray rectangle
+    targetRectangle.appendChild(draggedElement);
+    draggedElement.classList.remove('dragging');
+
+    // Get the name of the patient (assuming it's the textContent minus the 'X' delete button)
+    const name = draggedElement.textContent.slice(0, -1); 
+
+    // Save the updated position (rectangle2) and color to Firebase
+    const rectanglesRef = database.ref('rectangles');
+    rectanglesRef.once('value', function(snapshot) {
+      snapshot.forEach(function(childSnapshot) {
+        const data = childSnapshot.val();
+        if (data.name === name) {
+          // Update the rectangle and color in Firebase
+          rectanglesRef.child(childSnapshot.key).update({
+            rectangle: 2, // ID of "X-Ray" rectangle
+            backgroundColor: draggedElement.style.backgroundColor,
+            textColor: draggedElement.style.color
+          });
+        }
+      });
+    });
+
+    // Hide the choice modal after applying
+    document.getElementById('choiceModal').style.display = 'none';
+
+    updateBoxCount();
+  } else {
+    console.error('No element is currently being dragged.');
+  }
+}
+//end of function
+
+
+// Function to update the box count for each rectangle
+function updateBoxCount() {
+  const rectangles = document.querySelectorAll('.rectangle');
+  
+  rectangles.forEach((rectangle, index) => {
+    const boxCount = rectangle.querySelectorAll('.name-box').length;
+    const counterBox = document.getElementById(`counterBox${index + 1}`);
+    counterBox.textContent = boxCount;
+  });
+
+ const rectanglesRef = database.ref('rectangles');
+
+  rectanglesRef.once('value', function(snapshot) {
+    const count = snapshot.numChildren(); // Count the number of child nodes
+    document.getElementById('boxCount').textContent = count;
+  });
+}
+
+// Close the modal if clicked outside of it
+window.onclick = function(event) {
+  if (event.target == document.getElementById('id01')) {
+    document.getElementById('id01').style.display = "none";
+  }
+}
+
+
+
+
+// Function to show the chat modal
+function showChatModal() {
+  document.getElementById('chatModal').style.display = 'block';
+}
+
+// Function to close the chat modal
+function closeChatModal() {
+  document.getElementById('chatModal').style.display = 'none';
+}
+
+// Function to send a message and display it in a cloud shape
+function sendMessage() {
+  const messageInput = document.getElementById('message');
+  const message = messageInput.value.trim();
+  
+  if (message) {
+    const messageContainer = document.getElementById('messageContainer');
+
+    // Create a new message cloud
+    const messageCloud = document.createElement('div');
+    messageCloud.className = 'message-cloud';
+    messageCloud.textContent = message;
+
+ // Save the message to Firebase
+    const newMessageRef = database.ref('messages').push();
+    newMessageRef.set({
+      content: message,
+      timestamp: Date.now()
+    }).then(() => {
+      // Store the Firebase key in a data attribute for later reference
+      messageCloud.setAttribute('data-key', newMessageRef.key);
+    });
+
+
+    // Add event listener for double-clicking the message cloud
+    messageCloud.ondblclick = function() {
+        deleteMessage(messageCloud);
+    };
+    
+    // Append the message cloud to the container
+    messageContainer.appendChild(messageCloud);
+
+    
+
+    // Clear the input field and hide the modal
+    messageInput.value = '';
+    closeChatModal();
+  }
+}
+
+
+// Close the modal if clicked outside of it
+window.onclick = function(event) {
+  if (event.target == document.getElementById('chatModal')) {
+    closeChatModal();
+  }
+}
+
+
+// Function to delete a message from Firebase and DOM
+function deleteMessage(messageCloud) {
+  const messageKey = messageCloud.getAttribute('data-key'); // Get the Firebase key from the data attribute
+  
+  if (messageKey) {
+    // Remove the message from Firebase using the key
+    database.ref('messages').child(messageKey).remove().then(() => {
+      // Remove the message from the DOM
+      messageCloud.remove();
+    }).catch(error => {
+      console.error('Error deleting message from Firebase:', error);
+    });
+  } else {
+    console.error('No Firebase key found for the message.');
+  }
+}
+
+
+// Load messages and rectangles from Firebase on page load
+window.onload = function() {
+  const messageContainer = document.getElementById('messageContainer');
+  
+  if (!messageContainer) {
+    console.error('Message container not found.');
+    return;  // Exit if the container is not found
+  }
+
+  // Load chat messages from Firebase
+  const messagesRef = database.ref('messages');
+  messagesRef.once('value', function(snapshot) {
+    snapshot.forEach(function(childSnapshot) {
+      const data = childSnapshot.val();
+      
+      // Check if data and content are valid before trying to display them
+      if (!data || !data.content) {
+        console.error('Invalid data retrieved from Firebase:', data);
+        return;  // Skip this iteration if data is invalid
+      }
+
+      // Create and append the message cloud as usual
+      const messageCloud = document.createElement('div');
+      messageCloud.className = 'message-cloud';
+      messageCloud.textContent = data.content;
+
+      // Store the Firebase key in a data attribute for later reference
+      messageCloud.setAttribute('data-key', childSnapshot.key);
+
+      messageCloud.ondblclick = function() {
+        deleteMessage(messageCloud);
+      };
+
+      // Append the message cloud to the container
+      messageContainer.appendChild(messageCloud);
+    });
+  }).catch(error => {
+    console.error("Error loading messages from Firebase:", error);
+  });
+
+  // Load rectangles and their boxes from Firebase
+  const rectanglesRef = database.ref('rectangles');
+  rectanglesRef.once('value', function(snapshot) {
+    const sequenceBoxes = []; // Array to hold boxes for the sequence rectangle
+
+    snapshot.forEach(function(childSnapshot) {
+      const data = childSnapshot.val();
+      const rectangle = document.getElementById(`rectangle${data.rectangle}`);
+      
+      if (!rectangle) {
+        console.error(`Rectangle with ID rectangle${data.rectangle} not found.`);
+        return;
+      }
+
+      // Create the name box
+      const nameBox = document.createElement('div');
+      nameBox.className = 'name-box';
+      nameBox.draggable = true;
+      nameBox.ondragstart = drag;
+      nameBox.textContent = data.name;
+
+      // Apply the saved background color and text color
+      nameBox.style.backgroundColor = data.backgroundColor || '';
+      nameBox.style.color = data.textColor || '';
+
+      // Create the delete button
+      const deleteButton = document.createElement('button');
+      deleteButton.textContent = 'X';
+      deleteButton.className = 'delete-button';
+      deleteButton.onclick = function() {
+        deleteBox(nameBox);
+      };
+
+      // Append the delete button to the name box
+      nameBox.appendChild(deleteButton);
+
+      // Append boxes to the correct rectangle
+      if (data.rectangle === 3 && data.position !== null) {
+        // If the box is in the "Sequence" rectangle, store it with its position
+        sequenceBoxes.push({ element: nameBox, position: data.position });
+      } else {
+        // For other rectangles, append directly
+        rectangle.appendChild(nameBox);
+      }
+    });
+
+    // Sort sequenceBoxes based on position and append them in the correct order
+    sequenceBoxes.sort((a, b) => a.position - b.position);
+    sequenceBoxes.forEach(item => {
+      document.getElementById('rectangle3').appendChild(item.element);
+    });
+
+    // Update the box count after all boxes are loaded
+    updateBoxCount();
+  }).catch(error => {
+    console.error("Error loading rectangles from Firebase:", error);
+  });
+};
+
+
+
+// Your addName function here
+
+function deleteBox(nameBox) {
+  const name = nameBox.textContent.slice(0, -1); // Remove 'X' from the name
+  const rectanglesRef = database.ref('rectangles');
+  
+  rectanglesRef.once('value', function(snapshot) {
+    snapshot.forEach(function(childSnapshot) {
+      const data = childSnapshot.val();
+      if (data.name === name) {
+        rectanglesRef.child(childSnapshot.key).remove(); // Remove from Firebase
+      }
+    });
+  });
+
+  nameBox.remove(); // Remove from the DOM
+  updateBoxCount();
+}
+
+// Your window.onload function here
+updateBoxCount();
+</script>
+
+</body>
+</html>
